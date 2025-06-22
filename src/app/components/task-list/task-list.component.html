@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h4>📋 Task List</h4>
+
+  <div *ngIf="tasks.length > 0; else noTasks">
+    <app-task-item
+      *ngFor="let task of tasks"
+      [task]="task"
+      (toggle)="onToggleTask($event)">
+    </app-task-item>
+  </div>
+
+  <ng-template #noTasks>
+    <p>No tasks to display.</p>
+  </ng-template>
+</div>

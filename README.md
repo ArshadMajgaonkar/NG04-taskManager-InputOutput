@@ -2,9 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Development server
+## Input Output property
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+`Flow`
+
+Click on <div> in task-item → calls onToggle() → emits ID → 
+Parent (task-list) receives it via (toggle) → calls toggleTask(id) → 
+Service updates task → List is refreshed
+
+User clicks <div> in task-item
+        ↓
+task-item.onToggle() called
+        ↓
+@Output() toggle.emit(taskId)
+        ↓
+task-list (toggle)="toggleTask($event)"
+        ↓
+task-list.toggleTask(id)
+        ↓
+TaskService updates task
+        ↓
+Task list refreshed
+
 
 ## Code scaffolding
 

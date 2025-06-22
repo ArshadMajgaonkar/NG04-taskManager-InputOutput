@@ -1,0 +1,9 @@
+
+<div class="d-flex align-items-center justify-content-between border p-2 mb-2">
+  <div (click)="onToggle()" style="cursor: pointer;">
+    <span [ngClass]="{'text-decoration-line-through': task.completed}">
+      {{ task.title }}
+    </span>
+  </div>
+  <!-- <button class="btn btn-sm btn-danger" (click)="onDelete()">Delete</button> -->
+</div>
