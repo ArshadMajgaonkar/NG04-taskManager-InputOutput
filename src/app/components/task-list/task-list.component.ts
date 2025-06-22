@@ -24,4 +24,9 @@ export class TaskListComponent {
     }
     console.log(`Task with id ${id} toggled. New status: ${task?.completed}`);
   }
+
+  onDeleteTask(id: number) {
+    this.tasks = this.tasks.filter(t => t.id !== id);
+    console.log(`Task with id ${id} deleted.`);
+  }
 }
